@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\LevelController;
 use App\Http\Controllers\admin\LokasiController;
 use App\Http\Controllers\admin\PaymentController;
+use App\Http\Controllers\admin\PengumumanController;
+use App\Http\Controllers\admin\ServiceTypeController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -37,3 +39,17 @@ Route::post('/tambahpayment', [PaymentController::class, 'create'])->name('payme
 Route::get('/editpayment/{id}', [PaymentController::class, 'edit'])->name('editpayment');
 Route::put('/editpayment/{id}', [PaymentController::class, 'update'])->name('payment.update');
 Route::delete('hapuspayment/{id}', [PaymentController::class, 'delete'])->name('delete');
+
+Route::get('/servicetype', [ServiceTypeController::class, 'index'])->name('servicetype');
+Route::get('/tambahservicetype', [ServiceTypeController::class, 'tambahservicetype'])->name('tambahservicetype');
+Route::post('/tambahservicetype', [ServiceTypeController::class, 'create'])->name('servicetype.create');
+Route::get('/editservice/{id}', [ServiceTypeController::class, 'edit'])->name('editservicetype');
+Route::put('/editservice/{id}', [ServiceTypeController::class, 'update'])->name('servicetype.update');
+Route::delete('hapusservicetype/{id}', [ServiceTypeController::class, 'delete'])->name('delete');
+
+Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman');
+Route::get('/tambahpengumuman', [PengumumanController::class, 'tambahpengumuman'])->name('tambahpengumuman');
+Route::post('/tambahpengumuman', [PengumumanController::class, 'create'])->name('pengumuman.create');
+Route::get('/editpengumuman/{id}', [PengumumanController::class, 'edit'])->name('editpengumuman');
+Route::put('/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
+Route::delete('/hapuspengumuman/{id}', [PengumumanController::class, 'delete'])->name('delete');
