@@ -65,7 +65,8 @@
                             <div class="form-group row">
                                 <label for="exampleFormControlInput1" class="col-sm-2">Saldo</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="saldo" id="transaksi" value="{{$cs->saldo}}" required>
+                                    <input type="text" class="form-control" name="saldo" id="transaksi" value="{{number_format($cs->saldo, 0, ',', '.')}}" required>
+
                                 </div>
                             </div>
 

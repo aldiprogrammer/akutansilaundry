@@ -46,4 +46,22 @@ class CustomerController extends Controller
         $level = Level::all();
         return view('admin/editcustomer', compact('data', 'cs', 'level'));
     }
+
+    function update(Request $request, $id)
+    {
+        $cs = Customer::find($id);
+        $cs->customer = $request->customer;
+        $cs->wa = $request->wa;
+        $cs->jk = $request->jk;
+        $cs->id_level = $request->level;
+        $cs->saldo =  str_replace(['.', ','], '',  $request->saldo);
+        $cs->save();
+        return redirect()->route('customer')->with('success', 'Data berhasil ditambah');
+    }
+
+    function delete($id)
+    {
+        $cs = Customer::find($id);
+        $cs->delete();
+    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CostController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\LevelController;
@@ -32,6 +33,9 @@ Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
 Route::get('/tambahcustomer', [CustomerController::class, 'tambahcustomer'])->name('tambahcustomer');
 Route::post('/tambahcustomer', [CustomerController::class, 'create'])->name('customer.create');
 Route::get('/editcustomer/{id}', [CustomerController::class, 'edit'])->name('editcustomer');
+Route::put('/editcustomer/{id}', [CustomerController::class, 'update'])->name('customer.update');
+Route::delete('hapuscustomer/{id}', [CustomerController::class, 'delete'])->name('delete');
+
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::get('/tambahpayment', [PaymentController::class, 'tambahpayment'])->name('tambahpayment');
@@ -53,3 +57,10 @@ Route::post('/tambahpengumuman', [PengumumanController::class, 'create'])->name(
 Route::get('/editpengumuman/{id}', [PengumumanController::class, 'edit'])->name('editpengumuman');
 Route::put('/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
 Route::delete('/hapuspengumuman/{id}', [PengumumanController::class, 'delete'])->name('delete');
+
+Route::get('/cost', [CostController::class, 'index'])->name('cost');
+Route::get('/tambahcost', [CostController::class, 'tambahcost'])->name('tambahcost');
+Route::post('/tambahcost', [CostController::class, 'create'])->name('cost.create');
+Route::get('/editcost/{id}', [CostController::class, 'edit'])->name('editcost');
+Route::put('/cost/{id}', [CostController::class, 'update'])->name('cost.update');
+Route::delete('/hapuscost/{id}', [CostController::class, 'delete'])->name('delete');
