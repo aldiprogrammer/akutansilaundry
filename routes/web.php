@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\CostController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\ExpensesController;
 use App\Http\Controllers\admin\LevelController;
 use App\Http\Controllers\admin\LokasiController;
 use App\Http\Controllers\admin\PaymentController;
@@ -64,3 +65,11 @@ Route::post('/tambahcost', [CostController::class, 'create'])->name('cost.create
 Route::get('/editcost/{id}', [CostController::class, 'edit'])->name('editcost');
 Route::put('/cost/{id}', [CostController::class, 'update'])->name('cost.update');
 Route::delete('/hapuscost/{id}', [CostController::class, 'delete'])->name('delete');
+
+Route::get('/expenses', [ExpensesController::class, 'index'])->name('expenses');
+Route::get('/tambahexpenses', [ExpensesController::class, 'tambahexpenses'])->name('tambahexpenses');
+Route::get('/detailcost/{id}', [ExpensesController::class, 'detailcost'])->name('detailcost');
+Route::post('/tambahexpenses', [ExpensesController::class, 'create'])->name('expenses.create');
+Route::get('/editexpenses/{id}', [ExpensesController::class, 'edit'])->name('editexpenses');
+Route::put('/editexpenses/{id}', [ExpensesController::class, 'update'])->name('expenses.update');
+Route::delete('/hapusexpenses/{id}', [ExpensesController::class, 'delete'])->name('delete');

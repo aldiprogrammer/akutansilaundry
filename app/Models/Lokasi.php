@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Nette\Schema\Expect;
 
 class Lokasi extends Model
 {
@@ -18,5 +19,11 @@ class Lokasi extends Model
     public function pengumuman()
     {
         return $this->hasMany(Pengumuman::class, 'id_lokasi');
+    }
+
+
+    public function expenses()
+    {
+        return $this->hasMany(Expenses::class, 'id_lokasi');
     }
 }
