@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\LevelController;
 use App\Http\Controllers\admin\LokasiController;
 use App\Http\Controllers\admin\PaymentController;
 use App\Http\Controllers\admin\PengumumanController;
+use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\ServiceTypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,3 +74,10 @@ Route::post('/tambahexpenses', [ExpensesController::class, 'create'])->name('exp
 Route::get('/editexpenses/{id}', [ExpensesController::class, 'edit'])->name('editexpenses');
 Route::put('/editexpenses/{id}', [ExpensesController::class, 'update'])->name('expenses.update');
 Route::delete('/hapusexpenses/{id}', [ExpensesController::class, 'delete'])->name('delete');
+
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
+Route::get('/tambahservice', [ServiceController::class, 'tambahservice'])->name('tambahservice');
+Route::post('/tambahservice', [ServiceController::class, 'create'])->name('service.create');
+Route::get('/editservice/{id}', [ServiceController::class, 'edit'])->name('editservice');
+Route::put('/editservice/{id}', [ServiceController::class, 'update'])->name('service.update');
+Route::delete('/hapusservice/{id}', [ServiceController::class, 'delete'])->name('delete');
