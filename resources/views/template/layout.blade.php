@@ -1535,6 +1535,30 @@
                     }
                     // Format tampilan input
                     $(this).val(formatRupiah(angka));
-                })
+                });
+
+                $('#numberofstef').on('input', function() {
+                    var jumlah = parseInt($(this).val()) || 0;
+                    var container = $('#stef-fields');
+                    var current = 1;
+                    container.empty();
+
+
+                    if (jumlah >= current) {
+                        // Tambah input baru
+                        for (var i = current; i <= jumlah; i++) {
+                            var html = '<div class="form-group row">' + '<label class="col-sm-2">Service Stef ' + i + '</label>' +
+                                '<div class="col-sm-2"><input type="text" class="form-control" name="servicestaf[]" placeholder="Service Stef" required></div>' +
+                                '<label class="col-sm-2">Komisi ' + i + '</label>' +
+                                '<div class="col-sm-2"><input type="text" class="form-control rupiah" name="komisi[]" placeholder="Komisi" required></div>' +
+                                '<label class="col-sm-1">Durasi ' + i + '</label>' +
+                                '<div class="col-sm-1"><input type="text" class="form-control" name="durasi[]" placeholder="Durasi" required></div>' +
+                                '</div>';
+                            container.append(html);
+                        }
+                    } else if (jumlah < current) { // Hapus input lebih for (var i=current; i> jumlah; i--) {
+                        container.children('.form-group').last().remove();
+                    }
+                });
 
             </script>

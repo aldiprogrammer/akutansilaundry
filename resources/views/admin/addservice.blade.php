@@ -56,33 +56,34 @@
                             <div class="form-group row">
                                 <label for="exampleFormControlInput1" class="col-sm-2">Number of stef</label>
                                 <div class="col-sm-8">
-                                    <input type="number" class="form-control" name="numberofstef" required>
+                                    <input type="number" class="form-control" id="numberofstef" name="numberofstef" required>
                                 </div>
                             </div>
 
+                            <div id="stef-fields">
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-2">Service stef</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="servicestaf" required>
 
-                            <div class="form-group row">
-                                <label for="exampleFormControlInput1" class="col-sm-2">Service stef</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="servicestaf" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-2">Komisi</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control rupiah" name="komisi" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="exampleFormControlInput1" class="col-sm-2">Durasi</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="level" required>
+                                    </div>
                                 </div>
                             </div>
 
-
-                            <div class="form-group row">
-                                <label for="exampleFormControlInput1" class="col-sm-2">Komisi</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control rupiah" name="komisi" required>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="exampleFormControlInput1" class="col-sm-2">Durasi</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="level" required>
-                                </div>
-                            </div>
 
                             <div class="form-group row">
                                 <label class="form-label col-sm-2"></label>
@@ -91,9 +92,6 @@
                                     <a href="/lokasi" class="btn btn-danger">Kembali</a>
                                 </div>
                             </div>
-
-
-
                         </form>
 
                     </div>
