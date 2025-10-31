@@ -1526,7 +1526,15 @@
             </script>
 
             <script>
-                var a = 200000 * 0.022;
-                console.log(a);
+                $(".rupiah").on('input', function() {
+                    var val = $(this).val();
+                    let angka = val.replace(/[^0-9]/g, '');
+                    if (angka === '') {
+                        $(this).val('');
+                        return;
+                    }
+                    // Format tampilan input
+                    $(this).val(formatRupiah(angka));
+                })
 
             </script>
