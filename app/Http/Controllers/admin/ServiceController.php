@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ofstef;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -29,11 +30,19 @@ class ServiceController extends Controller
         $sr->nama_produk = $request->nama_produk;
         $sr->harga = $request->harga;
         $sr->satuan = $request->satuan;
-        $sr->of_stef = $request->of_stef;
-        $sr->service_stef = $request->service_stef;
-        $sr->komisi = $request->komisi;
-        $sr->durasi = $request->durasi;
+        $sr->of_stef = $request->numberofstef;
         $sr->save();
+
+        $count = count($request->durasi);
+        $durasi = $request->durasi;
+        $of = new Ofstef();
+        for ($i = 0; $i < $count; $i++) {
+            $of->id_service = $sr->id;
+            $of->service_stef = $request->servicestaf[$i];
+            $of->komisi = $request->komisi[$i];
+            $of->durasi = $request->durasi[$i];
+            $of->save();
+        }
         return redirect()->route('service')->with('success', 'Data berhasil ditambah');
     }
 

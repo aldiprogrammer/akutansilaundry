@@ -29,9 +29,9 @@
                                         <th scope="col">Harga</th>
                                         <th scope="col">Satuan</th>
                                         <th scope="col">Number of stef</th>
-                                        <th scope="col">Service stef</th>
+                                        {{-- <th scope="col">Service stef</th>
                                         <th scope="col">Komisi</th>
-                                        <th scope="col">Durasi</th>
+                                        <th scope="col">Durasi</th> --}}
                                         <th scope="col">Opsi</th>
                                     </tr>
                                 </thead>
@@ -46,7 +46,7 @@
                                         <td>{{ $item->harga }}</td>
                                         <td>{{ $item->satuan }}</td>
                                         <td>{{ $item->of_stef }}</td>
-                                        <td>{{ $item->harga }}</td>
+                                        {{-- <td>{{ $item->service_stef }}</td> --}}
 
 
                                         <td>

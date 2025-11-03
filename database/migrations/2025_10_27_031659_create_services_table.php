@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('harga', 50);
             $table->string('satuan', 50);
             $table->string('of_stef', 50);
-            $table->string('service_stef', 50);
-            $table->string('komisi', 50);
-            $table->string('durasi', 50);
+            // $table->string('service_stef', 50);
+            // $table->string('komisi', 50);
+            // $table->string('durasi', 50);
             $table->timestamps();
         });
     }

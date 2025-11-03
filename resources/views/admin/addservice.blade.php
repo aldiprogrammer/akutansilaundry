@@ -22,12 +22,12 @@
                 </div>
                 <div class="box-body">
                     <div class="box-body">
-                        <form action="{{route('level.create')}}" method="post">
+                        <form action="{{route('service.create')}}" method="post">
                             @csrf
                             <div class="form-group row">
                                 <label for="exampleFormControlInput1" class="col-sm-2">Nama produk</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="level" required>
+                                    <input type="text" class="form-control" name="nama_produk" required>
                                 </div>
                             </div>
 
@@ -37,8 +37,6 @@
                                     <input type="text" class="form-control rupiah" name="harga" required>
                                 </div>
                             </div>
-
-
 
                             <div class="form-group row">
                                 <label for="exampleFormControlInput1" class="col-sm-2">Satuan</label>
