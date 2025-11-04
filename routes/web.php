@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\CostController;
 use App\Http\Controllers\admin\CustomerController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\DepositCustomerController;
 use App\Http\Controllers\admin\ExpensesController;
 use App\Http\Controllers\admin\LevelController;
 use App\Http\Controllers\admin\LokasiController;
@@ -32,6 +33,7 @@ Route::put('/editlevel/{id}', [LevelController::class, 'update'])->name('level.u
 Route::delete('/hapuslevel/{id}', [LevelController::class, 'hapus'])->name('level.update');
 
 Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
+Route::get('/customer/{id}', [CustomerController::class, 'detail'])->name('detailcustomer');
 Route::get('/tambahcustomer', [CustomerController::class, 'tambahcustomer'])->name('tambahcustomer');
 Route::post('/tambahcustomer', [CustomerController::class, 'create'])->name('customer.create');
 Route::get('/editcustomer/{id}', [CustomerController::class, 'edit'])->name('editcustomer');
@@ -81,3 +83,11 @@ Route::post('/tambahservice', [ServiceController::class, 'create'])->name('servi
 Route::get('/editservice/{id}', [ServiceController::class, 'edit'])->name('editservice');
 Route::put('/editservice/{id}', [ServiceController::class, 'update'])->name('service.update');
 Route::delete('/hapusservice/{id}', [ServiceController::class, 'delete'])->name('delete');
+Route::get('/detailservice/{id}', [ServiceController::class, 'detail'])->name('detail');
+
+Route::get('/deposit', [DepositCustomerController::class, 'index'])->name('deposit');
+Route::get('/tambahdeposit', [DepositCustomerController::class, 'tambahdeposit'])->name('tambahdeposit');
+Route::post('/tambahdeposit', [DepositCustomerController::class, 'create'])->name('deposit.create');
+Route::get('/editdeposit/{id}', [DepositCustomerController::class, 'edit'])->name('editdeposit');
+Route::put('/editdeposit/{id}', [DepositCustomerController::class, 'update'])->name('deposit.update');
+Route::delete('/hapusdeposit/{id}', [DepositCustomerController::class, 'delete'])->name('delete');

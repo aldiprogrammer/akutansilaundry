@@ -88,4 +88,14 @@ class ServiceController extends Controller
         $sr->delete();
         $of = Ofstef::where('id_service', $id)->delete();
     }
+
+    function detail($id)
+    {
+        $data = [
+            'title' => 'Detail service',
+        ];
+
+        $of = Ofstef::where('id_service', $id)->get();
+        return view('admin/detailservice', compact('data', 'of'));
+    }
 }

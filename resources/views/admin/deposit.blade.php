@@ -17,7 +17,7 @@
                     <h3 class="box-title"> <i class="fas fa-list"></i> Data {{ $data['title'] }}</h3>
                 </div>
                 <div class="box-body">
-                    <a href="/tambahservice" class="btn bg-black"> <i class="fas fa-plus"></i> Tambah {{ $data['title'] }} </a>
+                    <a href="/tambahdeposit" class="btn bg-black"> <i class="fas fa-plus"></i> Tambah {{ $data['title'] }} </a>
                     <hr>
                     <div class="box-body">
                         <div class="table-responsive">
@@ -25,36 +25,33 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
-                                        <th scope="col">Nama produk</th>
-                                        <th scope="col">Harga</th>
-                                        <th scope="col">Satuan</th>
-                                        <th scope="col">Number of stef</th>
-                                        {{-- <th scope="col">Service stef</th>
-                                        <th scope="col">Komisi</th>
-                                        <th scope="col">Durasi</th> --}}
+                                        <th scope="col">Customer</th>
+                                        <th scope="col">Whatsapp</th>
+                                        <th scope="col">Saldo awal</th>
+                                        <th scope="col">Tambah saldo</th>
+                                        <th scope="col">Saldo akhir</th>
+                                        <th scope="col">Payment</th>
                                         <th scope="col">Opsi</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php
                                     $no = 1;
                                     @endphp
-                                    @foreach($data['service'] as $item)
+                                    @foreach($data['depo'] as $item)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{$item->nama_produk}}</td>
-                                        <td>{{ $item->harga }}</td>
-                                        <td>{{ $item->satuan }}</td>
-                                        <td>{{ $item->of_stef }}</td>
-                                        {{-- <td>{{ $item->service_stef }}</td> --}}
-
-
+                                        <td>{{$item->customer}}</td>
+                                        <td>{{ $item->wa }}</td>
+                                        <td>{{number_format($item->saldo_awal, 0, ',', '.')}}</td>
+                                        <td>{{number_format($item->tambah_saldo, 0, ',', '.')}}</td>
+                                        <td>{{number_format($item->saldo_akhir, 0, ',', '.')}}</td>
+                                        <td>{{$item->payment}}</td>
                                         <td>
-                                            <button id="hapus" class="btn btn-danger btn-sm btnhapus" data-id="{{ $item->id }}" data-url='hapusservice' data-aksi="Hapus data service"><i class="fas fa-trash"></i></button>
-                                            <a href="editservice/{{ $item->id }}" class="btn bg-black btn-sm"> <i class="fas fa-pen"></i></a>
-                                            <a href="detailservice/{{ $item->id }}" class="btn bg-info btn-sm"> <i class="fas fa-user"></i></a>
+                                            <button id="hapus" class="btn btn-danger btn-sm btnhapus" data-id="{{ $item->id }}" data-url='hapusdeposit' data-aksi="Hapus data deposit"><i class="fas fa-trash"></i></button>
+                                            <a href="editdeposit/{{ $item->id }}" class="btn bg-black btn-sm"> <i class="fas fa-pen"></i></a>
                                         </td>
-
                                     </tr>
                                     @endforeach
 

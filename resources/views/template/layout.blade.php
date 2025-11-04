@@ -357,33 +357,15 @@
                     })
                 });
 
-
-                $("#wa").change(function() {
-                    var id = $(this).val();
-                    $.ajax({
-                        url: 'customer/' + id
-                        , type: 'GET'
-                        , success: function(response) {
-                            $("#customer").val(response.customer);
-                            $("#rekening").html(response.rekening);
-                            $("#produk").html(response.produk);
-                            $("#kode-customer").val(response.kode_customer);
-
-                        }
-                        , error: function(error) {
-                            console.log(error.message);
-                        }
-                    })
-                });
-
                 $(".wa").change(function() {
                     var id = $(this).val();
                     $.ajax({
-                        url: 'customer/' + id
+                        url: '/customer/' + id
                         , type: 'GET'
                         , success: function(response) {
                             $(".customer").val(response.customer);
-                            $(".rekening").html(response.rekening);
+                            $(".saldo").val(response.saldo);
+                            console.log(response);
 
                         }
                         , error: function(error) {
@@ -391,6 +373,26 @@
                         }
                     })
                 });
+
+                $(".waupdate").change(function() {
+                    var id = $(this).val();
+                    $.ajax({
+                        url: '/customer/' + id
+                        , type: 'GET'
+                        , success: function(response) {
+                            $(".customer").val(response.customer);
+                            $(".saldo").val(response.saldo);
+                            console.log(response);
+                            $(".saldoakhir").val('');
+                            $('.addsaldo').val('')
+
+                        }
+                        , error: function(error) {
+                            console.log(error.message);
+                        }
+                    })
+                });
+
 
 
                 $("#produk").change(function() {
@@ -1569,5 +1571,16 @@
                         container.children('.form-group').last().remove();
                     }
                 });
+
+                $(".addsaldo").keyup(function() {
+                    var val = $(this).val();
+
+                    var saldo = $(".saldo").val();
+                    let addsaldo = val.replace(/[^0-9]/g, '');
+                    let saldoawal = saldo.replace(/[^0-9]/g, '');
+                    var saldoakhir = parseInt(addsaldo) + parseInt(saldoawal);
+
+                    $(".saldoakhir").val(formatRupiah(saldoakhir));
+                })
 
             </script>

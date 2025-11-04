@@ -64,4 +64,16 @@ class CustomerController extends Controller
         $cs = Customer::find($id);
         $cs->delete();
     }
+
+    function detail($id)
+    {
+
+        $cs = Customer::find($id);
+        return response()->json(
+            [
+                'customer' => $cs->customer,
+                'saldo' => number_format($cs->saldo, 0, ',', '.')
+            ]
+        );
+    }
 }
