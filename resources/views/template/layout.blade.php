@@ -1538,7 +1538,16 @@
                 });
 
                 $('#numberofstef').on('input', function() {
-                    var jumlah = parseInt($(this).val()) || 0;
+
+                    var old = $("#numberold").val();
+                    if (old != false) {
+                        var jumlah = parseInt($(this).val()) - old || 0;
+                    } else {
+
+                        var jumlah = parseInt($(this).val()) || 0;
+
+                    }
+
                     var container = $('#stef-fields');
                     var current = 1;
                     container.empty();

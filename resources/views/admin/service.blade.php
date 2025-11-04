@@ -50,8 +50,8 @@
 
 
                                         <td>
-                                            <button id="hapus" class="btn btn-danger btn-sm btnhapus" data-id="{{ $item->id }}" data-url='hapuscost' data-aksi="Hapus data cost"><i class="fas fa-trash"></i></button>
-                                            <a href="editcost/{{ $item->id }}" class="btn bg-black btn-sm"> <i class="fas fa-pen"></i></a>
+                                            <button id="hapus" class="btn btn-danger btn-sm btnhapus" data-id="{{ $item->id }}" data-url='hapusservice' data-aksi="Hapus data service"><i class="fas fa-trash"></i></button>
+                                            <a href="editservice/{{ $item->id }}" class="btn bg-black btn-sm"> <i class="fas fa-pen"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
